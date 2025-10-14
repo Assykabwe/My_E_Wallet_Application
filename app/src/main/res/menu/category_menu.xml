@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_cards" android:title="Cards"/>
+    <item android:id="@+id/menu_rewards" android:title="Rewards"/>
+    <item android:id="@+id/menu_transactions" android:title="Transactions"/>
+    <item android:id="@+id/menu_settings" android:title="Settings"/>
+    <item android:id="@+id/menu_passes" android:title="passes"/>
+    <item android:id="@+id/menu_logout" android:title="Logout"/>
+    <item
+        android:id="@+id/menu_help"
+        android:title="Help" />
+    <item
+        android:id="@+id/menu_about"
+        android:title="About" />
+</menu>

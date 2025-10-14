@@ -1,0 +1,36 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F6FA">
+    <!--  🔹 Header Card  -->
+    <androidx.cardview.widget.CardView android:id="@+id/headerCard" android:layout_width="0dp" android:layout_height="92dp" android:layout_margin="16dp" android:backgroundTint="#FCFCFBFD" app:cardElevation="4dp" app:cardCornerRadius="16dp" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="match_parent">
+            <ImageView android:id="@+id/imageView3" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="12dp" android:contentDescription="Back" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:srcCompat="@drawable/back"/>
+            <TextView android:id="@+id/titleText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transactions" android:textColor="#000000" android:textSize="20sp" android:textStyle="bold" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+            <ImageView android:id="@+id/imageView4" android:layout_width="28dp" android:layout_height="28dp" android:layout_marginEnd="12dp" android:contentDescription="Navigation menu" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" app:srcCompat="@drawable/menu"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <!--   Actions Row  -->
+    <LinearLayout android:id="@+id/actionsRow" android:orientation="horizontal" android:gravity="center" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@id/headerCard" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <!--   Pay Button   -->
+        <LinearLayout android:id="@+id/payBtn" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@android:color/darker_gray" android:layout_margin="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:src="@android:drawable/ic_menu_upload" android:layout_width="32dp" android:layout_height="32dp"/>
+            <TextView android:text="Pay" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <!--   Transfer Button   -->
+        <LinearLayout android:id="@+id/transferBtn" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@android:color/darker_gray" android:layout_margin="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:src="@android:drawable/ic_menu_share" android:layout_width="32dp" android:layout_height="32dp"/>
+            <TextView android:text="Transfer" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <!--   Report Button   -->
+        <LinearLayout android:id="@+id/reportBtn" android:orientation="vertical" android:gravity="center" android:padding="12dp" android:background="@android:color/darker_gray" android:layout_margin="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:src="@android:drawable/ic_menu_info_details" android:layout_width="32dp" android:layout_height="32dp"/>
+            <TextView android:text="Report" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--   Transaction ListView  -->
+    <ListView android:id="@+id/transactionList" android:layout_width="0dp" android:layout_height="0dp" android:divider="@android:color/darker_gray" android:dividerHeight="1dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/actionsRow" app:layout_constraintVertical_bias="0.0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

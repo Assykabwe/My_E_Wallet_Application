@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "520161207683",
+    "project_id": "billbliss-27da8",
+    "storage_bucket": "billbliss-27da8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520161207683:android:13f142c0bb126133d5c2b6",
+        "android_client_info": {
+          "package_name": "com.example.billbliss"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4313X6LRvAtV8AHBHx_QNFDwaMLzTvxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520161207683:android:229415d25050444ad5c2b6",
+        "android_client_info": {
+          "package_name": "com.example.e_walletapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4313X6LRvAtV8AHBHx_QNFDwaMLzTvxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520161207683:android:426df0769a928e13d5c2b6",
+        "android_client_info": {
+          "package_name": "com.example.my_e_wallet_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4313X6LRvAtV8AHBHx_QNFDwaMLzTvxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
