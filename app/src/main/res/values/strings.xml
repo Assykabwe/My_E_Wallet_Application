@@ -36,6 +36,7 @@
     <string name="your_profile">Your Profile</string>
     <string name="email_placeholder">emailplaceholder@gmail.com</string>
     <string name="logout">Logout</string>
+    <string name="welcome">Welcome</string>
     <string name="choose_language">Choose Language</string>
     <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
 </resources>
