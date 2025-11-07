@@ -1,14 +1,12 @@
 package com.example.my_e_wallet_application
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
-import androidx.appcompat.widget.SwitchCompat
+import androidx.appcompat.widget.SwitchCompat // Correct import
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
@@ -21,10 +19,13 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance()
+
         // 🔙 Back icon
         findViewById<ImageView>(R.id.imageView3).setOnClickListener { finish() }
 
-        // ☰ Menu icon
+        // ☰ Menu icon (unchanged)
         val menuIcon = findViewById<ImageView>(R.id.imageView4)
         menuIcon.setOnClickListener { view ->
             val popupMenu = PopupMenu(this, view)
@@ -43,10 +44,7 @@ class SettingsActivity : AppCompatActivity() {
                         startActivity(Intent(this, TransactionsActivity::class.java))
                         true
                     }
-                    R.id.menu_settings -> {
-                        // Already in Settings, just return
-                        true
-                    }
+                    R.id.menu_settings -> true
                     R.id.menu_passes -> {
                         startActivity(Intent(this, PassesActivity::class.java))
                         true
@@ -76,16 +74,18 @@ class SettingsActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("UserSettings", MODE_PRIVATE)
 
-        // Profile
+        // 👤 Profile Section: Launch ProfileActivity
         val profileSection = findViewById<LinearLayout>(R.id.profileSection)
         profileSection.setOnClickListener {
-            Toast.makeText(this, "Profile clicked", Toast.LENGTH_SHORT).show()
+            // ⭐ NEW: Launch a dedicated profile management activity
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
 
-        // Cards
+        // 💳 Cards Section: Launch CardManagementActivity
         val cardsSection = findViewById<LinearLayout>(R.id.cardsSection)
         cardsSection.setOnClickListener {
-            Toast.makeText(this, "Cards clicked", Toast.LENGTH_SHORT).show()
+            // ⭐ NEW: Launch a dedicated card management activity
+            startActivity(Intent(this, CardManagementActivity::class.java))
         }
 
         // Language
@@ -105,14 +105,16 @@ class SettingsActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        // Notifications
-        val notificationSwitch = findViewById<Switch>(R.id.notificationSwitch)
+        // Notifications (unchanged, with fix)
+        val notificationSwitch = findViewById<SwitchCompat>(R.id.notificationSwitch)
         notificationSwitch.isChecked = sharedPreferences.getBoolean("notificationsEnabled", true)
         notificationSwitch.setOnCheckedChangeListener { _, isChecked ->
             sharedPreferences.edit().putBoolean("notificationsEnabled", isChecked).apply()
+            val message = if (isChecked) "Notifications enabled." else "Notifications disabled. You will not receive real-time alerts."
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
         }
 
-        // Contact Us
+        // Contact Us (unchanged)
         val contactSection = findViewById<LinearLayout>(R.id.contactSection)
         contactSection.setOnClickListener {
             Toast.makeText(this, "Contact us at support@billbliss.com", Toast.LENGTH_LONG).show()
